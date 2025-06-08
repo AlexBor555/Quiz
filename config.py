@@ -1,2 +1,2 @@
-API_TOKEN = 'Ваш_токен_бота_здесь'
+API_TOKEN = '7758885664:AAHw2WlzfEvC4Aw4g6QE-EIwJuMkrLYBpQw'
 DB_NAME = 'dataquiz.db'
