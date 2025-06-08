@@ -80,10 +80,24 @@ async def cmd_start(message: types.Message):
         "- Нажать «Показать статистику», чтобы увидеть свои результаты.\n\n"
         "Также доступны команды:\n"
         "- /quiz — начать новую игру\n"
-        "- /stats — показать статистику.",
+        "- /stats — показать статистику\n"
+        "- /help - помощь в боте.",
         reply_markup=builder.as_markup(resize_keyboard=True)  # Отображаем клавиатуру с кнопками
     )
 
+@dp.message(Command("help"))
+async def cmd_help(message: types.Message):
+    await message.answer(
+        "Вы можете:\n"
+        "- Нажать «Начать игру», чтобы пройти викторину.\n"
+        "- Нажать «Показать статистику», чтобы увидеть свои результаты.\n\n"
+        "Также доступны команды:\n"
+        "- /quiz — начать новую игру\n"
+        "- /stats — показать статистику\n"
+        "- /help - помощь в боте."
+    )
+
+@dp.message(Command("stats"))
 @dp.message(F.text == "Показать статистику")  # Обработка нажатия кнопки "Показать статистику"
 async def cmd_show_stats(message: types.Message):
     # Получаем ID пользователя
